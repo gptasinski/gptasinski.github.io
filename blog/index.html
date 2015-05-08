@@ -2,34 +2,51 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="#" >
+  <!-- two link tags are set here to access two stylesheets-->
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css" >
+  <link rel="stylesheet" type="text/css" href="site-index.css" >
   <title>My First Website Challange Blog Index</title>
 </head>
+<!--remember to keep it simple! -->
+  <body>
+  <div>
+    <!-- nav bar: one button per page link -->
+    <nav>
+      <!-- header being told to display like a table to get the buttons ordered -->
+      <header>
+        <!-- .one set to displat like a table cell, matching w/ header display -->
+        <button class="one" type="button"><a href="../about_me.html">About Me</a></button>
+        <button class="one" type="button"><a href="../links.html">Links</a></button>
+        <button class="one" type="button"><a href="index.html">Blog</a></button>
+        <button class="one" type="button"><a href="../projects.html">Projects</a></button>
+        <button class="one" type="button"><a href="../contact.html">Contact</a></button>
+      </header>
+    </nav>
 
-  <main>
-    <!--container for heading -->
-    <div>
-      <h1>DBC WEEKLY BLOGS</h1>
-    </div>
 
-    <!--container on left: blog titles and dates listed in order of post -->
-    <div>
-      <div>Week 1: Version Control, Git and GitHub, April 30, 2015</div>
-      <div>Week 1: Kitchen vs. Table Mindset, April 30, 2015</div>
-      <div>#</div>
-      <div>#</div>
-      <div>#</div>
-      <div>#</div>
-      <div>#</div>
-      <div>#</div>
-      <div>#</div>
-      <div>#</div>
-      <div>#</div>
-      <div>#</div>
-      <div>#</div>
-      <div>#</div>
-      <div>#</div>
-      <div>#</div>
-    </div>
-  </main>
+    <!-- make a section that is a list of the links to the blogs -->
+    <article>
+      <h1>DBC BLOG POSTS</h1>
+      <p><a href="t1-git-blog.html">Week 1: Version Control, Git and GitHub</a></p>
+      <p><a href="c1-chefs-kitchen.html">Week 1: Kitchen vs Table Mindset</a></p>
+      <p><a href="#">still to come</a></p>
+      <p><a href="#">still to come</a></p>
+      <p><a href="#">still to come</a></p>
+      <p><a href="#">still to come</a></p>
+      <p><a href="#">still to come</a></p>
+      <p><a href="#">still to come</a></p>
+      <p><a href="#">still to come</a></p>
+      <p><a href="#">still to come</a></p>
+      <p><a href="#">still to come</a></p>
+      <p><a href="#">still to come</a></p>
+      <p><a href="#">still to come</a></p>
+      <p><a href="#">still to come</a></p>
+      <p><a href="#">still to come</a></p>
+      <p><a href="#">still to come</a></p>
+    </article>
+
+  <!--how to get the footer to stay at the bottom? -->
+    <footer>Trying to keep it simple...for now</footer>
+  </div>
+  </body>
 </html>
