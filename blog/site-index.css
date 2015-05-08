@@ -1,0 +1,25 @@
+/* controls the navigation bar */
+ header {
+  display: table;
+  table-layout:fixed;
+  height: 75px;
+}
+
+/*controls the navigation buttons, effectivly tells them to act like cells
+from a table display */
+.one {
+  display: table-cell;
+  text-align: center;
+  width: 250px;
+  background-color: rgb(255, 220, 41);
+  font-size: 25px;
+  margin-top: 15px;
+}
+
+#name {
+  font-size: 38px;
+  font-weight: bold;
+  }
+
+
+

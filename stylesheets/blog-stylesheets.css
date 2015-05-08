@@ -1,0 +1,5 @@
+/* had to set the top margin on the the section containing the heading tags
+to push it below the navigation bar */
+#top {
+  margin-top: 125px;
+}
