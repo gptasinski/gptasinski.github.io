@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<head>
+  <title>Week 4 Tchnical Blog Post</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../blog/site-index.css" >
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheets.css" >
+  <link rel="stylesheet" type="text/css" href="../stylesheets/t3-stylesheet.css" >
+</head>
+
+<main>
+  <div>
+    <nav>
+      <header>
+        <button class="one" type="button"><a href="../about_me.html">About Me</a></button>
+        <button class="one" type="button"><a href="../links.html">Links</a></button>
+        <button class="one" type="button"><a href="index.html">Blog</a></button>
+        <button class="one" type="button"><a href="../projects">Projects</a></button>
+        <button class="one" type="button"><a href="../contact.html">Contact</a></button>
+      </header>
+    </nav>
+  </div>
+
+  <section id="top">
+    <h1>Map It!</h1>
+    <h2>DBC Week 4, Challenge #8</h2>
+    <h4>May 22, 2015</h4>
+  </section>
+
+  <section>
+
+    <p>So you want to know about the enumerable map method, eh? Well, first let's talk
+      about what an enumerable is. And please, if at any point you are reading this and
+      you feel that I, well, could use some help, just stop reading. Go ahead and click
+      the Contact link up above, send me an email and tell me what you think. Please.
+    </p>
+
+    <p>So then, I've been looking at it like this:<br />
+      An enumerable is a method that can count across a list of elements. It can take
+      that list and do something to each element in turn. By the way, the enumerator
+      is the thing that you are counting across, yup, the array, the hash or the range.
+      These enumerables work similarly to a loop, but there's not the risk of the loop
+      spiraling out of control and running on forever. The enumerable is going to
+      take some action on each element once, or in the case of some methods it will
+      take the action only as many times as you tell it to. Ther's a bunch of these
+      enumerables and although they all act in a similar fashion they all have a
+      specific job that they do. And please, focus, we're only going to talk about
+      the enumerable method map here.
+    </p>
+
+    <p>Let's look at it with an example, so that all these words that sound so
+      similar don't look like the same thing.
+    </p>
+
+    <p>So there's an enumerable method called map. Now what map does is return an array
+      containing the results of running a block of code once for every element in the
+      enumerator. I know that didn't help, but think of this:
+    </p>
+
+    <p>You just got a new puppy, and he's so damn cute. But you took him to the dog
+      park, he got in a scuffle and now has a nasty infection. You went to the vet and
+      got antibiotics for him. The bitch of it all it is that now you have to give the
+      puppy the meds every three hours and you have trouble remembering things. Good
+      thing you have started programming! You now have the tools to keep track of the times that you have to give him the meds.
+    </p>
+
+    <p>First thing you do is write down all the hours when you are going to give the
+      puppy his meds in a simple array:
+    </p>
+
+    <p><code>med_times = [9, 12, 3, 6, 9, 12, 3, 6]</code></p>
+
+    <p>So there you have the med schedule stored in a simple array (an enumerator).
+      But what good is that you say? Well it's 2:30 and you can't remember what the next med time is. But you know that you have an enumerable method called map that you can call on the array. If you call the method on your array without a
+      block of code it will return an enumerator. So you open your lap top, find the Ruby file you stored the array in and type "p med_times.map" (if you puts or
+      print, well you'll get a big old number that looks like the number on a bar
+      code):
+    </p>
+
+    <p><code>p med_times.map    #=> Enumerator:[9, 12, 3, 6, 9, 12, 3, 6]</code></p>
+    <p>You just accessed your list, and can rest assured your pup will get his meds
+      at the right time. What you just did, in the simplest terms, was tell your
+      array to output a "map" of the elements in the array. Because you didn't supply
+      map with a specific action to take on each element, the array was returned.
+    <p>
+
+    <p>Turns out you woke up and gave him meds at 8, and now you need to change
+      all the times in your list. No problem! This is what map was made for. Remember?
+      If you call it with a code block, it will do something to each element of the
+      list. You need to subtract 1 from each of the elements in the list. Map it!
+    </p>
+    <p><code>p med_times.map { |i| i - 1 }   #=> [8, 11, 2, 5, 8, 11, 2, 5]</code></p>
+
+    <p>You just told your list, through the method map, to take every element, pick
+      it up, and subtract one from it. The bonus happens to be that map is going
+      to take the result of subtracting one from each time in the list and return it in a new list. The beauty of map is that it doesn't change the original array, it returns a new one.
+    <p>
+
+    <p>Now, you get home from the market and your roommate accuses you of not having
+      given the pup the meds all day. You feel insulted and decide to let map talk
+      for you! Check it out:</p>
+    <p><code>med_times.map { |i| puts "Chico got his meds at #{i}" }  #=><br />
+      "Chico got his meds at 9"<br />
+      "Chico got his meds at 12"<br />
+      "Chico got his meds at 3"<br />
+      "Chico got his meds at 6"<br />
+      "Chico got his meds at 9"<br />
+      "Chico got his meds at 12"<br />
+      "Chico got his meds at 3"<br />
+      "Chico got his meds at 6"</code></p>
+
+      <p>How 'bout that, eh?</p>
+
+      <p>That part in between the curly brackets is the code block. What you did was
+        take that your original array med_times and used map to tell it to take
+        every element and place it in the sentence provided. Map then outputs the
+        sentence in the code block with the times from the list placed into it. Now
+        your roomate can see that you are on top of things.
+      </p>
+
+      <p>This is just the start, just a quick tease into the powers of map and what
+        an enumerable method can do. Once you dive into the Ruby Documentation you will
+        find that there are other enumerable methods that you can use to keep track
+        of your various schedules and wow your friends with. Just remember some
+        important things. You have to call the enumerable with a block to get it to
+        do something, and keep in mind it is going to do that something to every
+        element, not just a few. If you don't give the block you are going to get
+        back some big number, unless you "p" it. You will not change the original
+        enumerator with map unless you add an "!", but that changes with some
+        methods. Do yourself a favor and go read the documentation:
+        <a href="http://ruby-doc.org/core-2.2.2/Enumerable.html">Ruby Enumberable Doc</a>. Happy Reading!
+      </p>
+
+  </section>
+</main>
+
