@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<head>
+  <title>t5-ruby-classes.html</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../blog/site-index.css" >
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheets.css" >
+  <link rel="stylesheet" type="text/css" href="../stylesheets/t5-stylesheet.css">
+</head>
+
+<main>
+  <div>
+    <nav>
+      <header>
+        <button class="one" type="button"><a href="../about_me.html">About Me</a></button>
+        <button class="one" type="button"><a href="../links.html">Links</a></button>
+        <button class="one" type="button"><a href="index.html">Blog</a></button>
+        <button class="one" type="button"><a href="../projects">Projects</a></button>
+        <button class="one" type="button"><a href="../contact.html">Contact</a></button>
+      </header>
+    </nav>
+  </div>
+
+  <section id="top">
+    <h1>When, Why and How to Use Classes</h1>
+    <h2>DBC Week 5, Challenge #7</h2>
+    <h4>May 29, 2015</h4>
+  </section>
+
+  <section>
+
+    <p>Before I even get in to when or how or why to use classes in Ruby, it makes
+      sense to first cover what a class is. The way that I see it is that a class is
+      in one sense a group of objects. All strings belong to the class 'Strings',
+      all integers belong to the class 'Integers', and confusingly enough all classes
+      belong to the class 'Class'. However, it's not that simple. Classes are not just
+      containers of objects, like an array or a hash, but they are also a blueprint or
+      a template for making new objects that belong to that class, so that  you don't
+      have to go back and create each new item piece by piece. I could ramble on
+      and on, trying to make sense of all the technical vocabulary in terms of one
+      another, but every time I try, it comes out in a mumbo-jumbo mess that isn't
+      so clear. So, please indulge me while a paint a picture for you.
+    </p>
+
+    <p>You are a supernatural being. You have just made a new world and are sitting
+      in a field of lush grass taking in the view of your new creation. You like the
+      look of the rolling hills, the feeling of the sun on your face and the wind in
+      your hair. As a feeling of pride and accomplishment starts to lull you into a
+      much deserved nap, your daughter comes up and taps you on the shoulder.
+    </p>
+
+    <p>"Good job Daddy", she says. "But why's it so green? Don't you like colors?"</p>
+
+    <p>You sit up and take a look around, and think to yourself, 'shit, she's right'.
+      As exhausted as you are, you know you're never going to get that nap until she
+      sees some color, so you ask her how she thinks you should put some color into
+      this new world. "Well, I like flowers", she says.
+    </p>
+
+    <p>So you have a new task. You sit and think about it, and as easy as it would be
+      to make one flower and then just copy it over and over to fill the landscape,
+      you know that your daughter is going to want more than one flower and more than
+      one color. The problem is that you're just so tired. The thought of creating
+      flower after flower after flower makes your spine shudder.
+    </p>
+
+    <p>Suddenly you have an idea. What if you had a blueprint for creating flowers?
+      A template that once plugged in with a couple different modifiers could make
+      individual flowers? A template (class) that could be used over and over to
+      create these flowers (objects), which all share certain simliarities but each
+      have their own characteristics? Good thing that you've been studying Ruby when
+      you're not busy being a god. So you break out your creation computer and open
+      up your trusty text editor. Enter classes:
+    </p>
+
+    <p>So you have to build a template (a class) that represents the characteristics
+      of a flower and contains the functions that a flower is going to experience in
+      the course of its life. You know from your studies that you have define your
+      class with the keyword <b>class</b> followed by the name of your class written
+      in <b>CamelCase</b>:</p>
+
+    <ul><code>
+      <li>class Flowers<li>
+        <li>end</li>
+    </code></ul>
+
+    <p>You now have your template, but it is empty. You could go ahead and create a
+      new flower but it wouldn't do anything. It has no functions (methods) and
+      there is nothing that distinguishes what that flower is. You think about it and
+      realize that all the objects you are going to create have a set of
+      characteristics: 'number of petals' and 'petal color'.
+      But those characteristics are going to change from flower to flower. Enter
+      the <b>initialize</b> method. Think of this as a starter method. Each time you create an instance of your class, a new flower, this method will run and
+      basically set up your new flower. You can define this method so that every time
+      you create a new flower, you pass in these characteristics so that each
+      flower you create has its own characteristics.
+    </p>
+
+    <ul><code>
+      <li>class Flowers</li>
+        <ul>
+          <li>def initialize(petal_num, petal_color)</li>
+          <ul>
+          <li>@petal_num = petal_num</li>
+          <li>@petal_color = petal_color</li>
+          <li>puts "You made a flower with #{petal_num} #{petal_color}
+            petals."</li>
+          </ul>
+          <li>end</li>
+        </ul>
+      <li>end</li>
+    </code></ul>
+
+    <p>Now outside of the class you can pick a name for a flower and set it equal
+    to Flowers.new(), and inside of the parenthesis put how many petals you want it
+    to have and what color to make those petals: </p>
+
+    <ul><code>
+      <li>new_flower = Flowers.new(5, "blue")<li>
+      <li>#=> "You made a flower with 5 blue petals."</li>
+    </code></ul>
+
+    <p>You have created a new flower. That flower is an instance of the Flowers class.
+    Now that you have started a template, you can create more flowers, more instances
+    of the Flowers class with different numbers of petals of different colors.
+    </p>
+
+    <p>Being a supernatural being you foresee your daughter complaining that the
+      flower really doesn't do anything. Luckily, now that you have a class Flowers
+      you can add functions (methods) into the class that affect any instance that
+      you decide to create. Let's say that you want a new flower to bloom:</p>
+
+    <p>You open you class back up and define a method within it:</p>
+
+    <ul><code>
+      <li> def bloom(flower_name)</li>
+      <ul>
+        <li>puts "The petals have opened and #{flower_name} is in bloom!"</li>
+      </ul>
+      <li>end</li>
+    </code></ul>
+
+    <p>With the above code you have just created a method that will work on
+      each new flower, each new instance of the Flowers class. To make it work on
+      a new instance, call the method on the instance with the flower's name in the
+      parenthesis:</p>
+
+    <ul><code>
+      <li>tulip = Flowers.new(8, "pink")<li>
+      <li>#=> "You made a flower with 8 pink petals."</li>
+    </code></ul>
+
+    <ul><code>
+      <li>tulip.bloom("tulip")</li>
+      <li>#=> "The petals have opened and tulip is in bloom!"</li>
+    </code></ul>
+
+    <p>Now taking this template for creating flowers, you can create as many
+      flowers as you want. You can give them all different numbers of petals and
+      colors of petals. All of the flowers created can 'bloom' as well. You can
+      add more methods to the Flowers class so that the instances created can
+      grow, wilt or blow in the breeze. </p>
+
+    <p>The point of this, and the beauty of it all, is that you don't have to
+      go and create each new object from scratch. Just go back to your template and
+      plug in the specific characteristics you'd like it to have, and let the
+      template to the work. Each time your daughter comes up and tells you that
+      she wants a new flower, all you have to ask is what color petals and how many
+      petals? Then you will truely be a god, at least in your daughter's eyes.
+    </p>
+
+
+
+
+
+
+  </section>
+</main>
+
