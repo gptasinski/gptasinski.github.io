@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<head>
+  <title>t6-oop-concepts.html</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../blog/site-index.css" >
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheets.css" >
+  <link rel="stylesheet" type="text/css" href="../stylesheets/t6-stylesheet.css">
+</head>
+
+<main>
+  <div>
+    <nav>
+      <header>
+        <button class="one" type="button"><a href="../about_me.html">About Me</a></button>
+        <button class="one" type="button"><a href="../links.html">Links</a></button>
+        <button class="one" type="button"><a href="index.html">Blog</a></button>
+        <button class="one" type="button"><a href="../projects">Projects</a></button>
+        <button class="one" type="button"><a href="../contact.html">Contact</a></button>
+      </header>
+    </nav>
+  </div>
+
+  <section id="top">
+    <h1>Blocks, Procs and Lambdas</h1>
+    <h2>DBC Week 6, Challenge #6</h2>
+    <h4>June 6, 2015</h4>
+  </section>
+
+  <section>
+
+    <p>If you are as new to programming as I am, you may have experienced what I like to
+      refer to as the sweat reaction that comes from encountering terms and concepts that
+      seem foreign or a bit high-brow. C'mon admit it, you've been there. When seeing a
+      phrase like 'create an algorithm' my heart rate and blood pressure increase, my
+      palms get a little slick and I think to myself 'how the hell do I do that? I studied
+      German not Math!' However, after taking a minute to think, it becomes clear that
+      algorithm is just a fifty-cent word for a list of procedures. I have been creating
+      and using them with relative ease for the past few weeks. Once settled down I can
+      get to work and try to actually learn something.
+    </p>
+
+    <p>Try this one on for size. Blocks! Procs! Lambdas! Blocks and Procs
+      and Lambdas, oh my! Is your heart beating a little faster? Are you warmer than you
+      were before reading that last line? Have you run for a paper towel to blot your
+      palms? Well I hope not, I wasn't trying to frighten you.
+    </p>
+
+    <p>I'm like to take a minute of your time to break these three terms down into their
+      basic parts: what they are and how they work. Hopefully by the time you finish
+      reading this these terms will become more like a friendly face you are happy to
+      recognize rather than a dude lurking in the shadows with his hood up on a hot night,
+      just staring at you.
+    </p>
+
+    <p>Here it goes, short and sweet with examples to follow.</p>
+
+    <p>A block is simply a piece of code that can be executed. The block is the code
+      contained between the <b>'{ }'</b>, or bound by the <b>'do'</b> and <b>'end'</b>.
+      You might recognize it from such syntax as:</br>
+      <ul><code>
+        <li>vegetables = ["asparagus", "green beans", "broccoli"]
+        <li>vegetables.each <b>do</b> |item|</li>
+          <ul>
+            <li>puts "I love to eat #{item}!"</li>
+          </ul>
+        <li><b>end</b></li>
+      </code>
+          <ul>
+            <li>#=> I love to eat asparagus!</li>
+            <li>#=> I love to eat green beans!</li>
+            <li>#=> I love to eat broccoli!</li>
+          </ul>
+      </ul>
+      or:</br>
+        <ul><code>
+          <li>vegetables.each <b>{</b> |item| puts "I love to eat #{item}!"
+          <b>}</b><li>
+          </code><ul>
+            <li>#=> I love to eat asparagus!</li>
+            <li>#=> I love to eat green beans!</li>
+            <li>#=> I love to eat broccoli!</li>
+          </ul>
+        </ul></br>
+      Simple enough right? All that's going on is that the method 'each' grabs each
+      vegetable in the array of vegetables, the block takes control of the action and
+      acts on a vegtable, and finally block gives the control back to 'each' until every
+      vegetable has been dealt with. The issue is that the block is not an object, it
+      can't saved to a variable and be reused. If you wanted to use this same block again
+      it has to be typed out in the code each time you need it.
+    </p>
+
+    <p>Thinking about the block in the above example, you realize that you like to eat
+      many other foods than just what is in the vegetable array. If the block from
+      above (I love to eat #{item}!) could be saved as a variable, you then could call it
+      as an argument to a method and use it on other arrays, say fruit, meats or nuts.
+      Now, young Rubyist, meet the proc. In the simplest of terms a proc is a saved block.
+      Proc is its own class, so when you create a new proc, you are creating an object.
+      Check it out:</br>
+      To define a proc set a variable equal to <b>Proc.new</b> followed by the block to be saved:</br>
+      <ul><code>
+        <li>food_message = <b>Proc.new</b> { |item| "I love to eat #{item}!" }</li>
+      </code></ul>
+      Now 'food_message' is a saved block, and it can be passed in to any method
+      that takes an argument and be used over and over on other arrays. The only thing
+      you have to remember is that methods deal with blocks, not procs. You need to trick
+      the method into thinking it is dealing with a block, and not your new proc. You do
+      this simply by preceeding your proc with the <b>'&'</b> sign. The unsuspecting
+      method never knows the difference!</br>
+      <ul><code>
+          <li>vegetables.each(<b>&</b>food_message)</li></code>
+            <ul>
+              <li>#=> I love to eat asparagus!</li>
+              <li>#=> I love to eat green beans!</li>
+              <li>#=> I love to eat broccoli!</li>
+            </ul>
+      </ul>
+      <ul><code>
+        <li>fruit = ["mangoes", "peaches", "pluots"]</li>
+        <li>fruit.each(<b>&</b>food_message)</li></code>
+          <ul>
+            <li>#=> I love to eat mangoes!</li>
+            <li>#=> I love to eat peaches!</li>
+            <li>#=> I love to eat pluots!</li>
+          </ul>
+      </ul>
+      Interestingly enough you can call a proc directly by using the <b>'.call'</b>
+      method. What? Use a method on a proc? Remember, it's an object. In the case of this
+      example we can go ahead and use the method on the proc and pass it a new item. Look:
+      </br>
+      <ul><code>
+        <li>food_message<b>.call</b>("carrots")</li></code>
+          <ul>
+            <li>#=>I love to eat carrots!</li>
+          </ul>
+      </ul>
+    </p>
+
+    <p>And now what about lambdas then you say? Well, strangely enough a lamdba similar
+      to a proc in many ways. In fact, ouside of syntax and a couple behaviors, they are
+      really identical. You can even think of a lambda as the shorthand version of a
+      proc (even though it's not all that much shorter when you put them side by side).
+      Let's look at this one step at a time:</br>
+      Lambdas, like procs, are objects. They are defined with the keyword <b>lambda</b>
+      followed by a block, like this:</br>
+      <ul><code>
+        <li><b>lambda</b> { |parameter| block }</li></code>
+      </ul>
+      You can also set the lambda to a variable like you can with a proc:
+      <ul><code>
+        <li>grouchy_message = lambda { |item| puts "I hate #{item}!" }</li></code>
+      </ul>
+      To pass the lambda to a method as an argument, you have to fool the method by
+      preceeding it with the <b>'&'</b> sign, just like a Proc:
+      <ul><code>
+        <li>vegetables.each(<b>&</b>grouchy_message)</li></code>
+          <ul>
+            <li>#=>I hate asparagus!</li>
+            <li>#=>I hate green beans!</li>
+            <li>#=>I hate broccoli!</li>
+          </ul>
+      </ul>
+      Just like a proc, you can call a lambda directly with the <b>'.call'</b>
+      method:</br>
+      <ul><code>
+        <li>grouchy_message<b>.call</b>("okra")</li></code>
+          <ul>
+            <li>#=> I hate okra!</li>
+          </ul>
+       </ul>
+      Now comes the fork in the road. There are two places where procs and
+      lambdas diverge in how they work. The first fork has to deal with the arguments
+      passed to procs and lambdas. A lambda checks the number of arguments passed to
+      it. If the number of arguments passed in doesn't match up, the lambda throws an
+      error. Take a look:</br>
+      <ul><code>
+        <li>grouchy_message.call</li></code>
+          <ul>
+            <li>#=> blog_page:172:in `block in (main)': wrong number of arguments (0 for 1) (ArgumentError)</li>
+          </ul>
+      </ul>
+      The lambda 'grouchy_message' that we set up earlier is expecting an 'item' for it
+      to run. If it doesn't see an 'item' as an argument, we get the above error. Here's
+      how it looks to make it work:</br>
+      <ul><code>
+        <li>grouchy_message.call("okra")</li></code>
+          <ul>
+            <li>#=> I hate okra!</li>
+          </ul>
+      </ul>
+      On the other hand, the proc could care less about the number of arguments. The
+      proc is going to run either way, becuase it doesn't check. Look:</br>
+      <ul><code>
+        <li>food_message.call</li></code>
+          <ul>
+            <li>#=> I love to eat  !</li>
+          </ul>
+      </ul>
+      <ul><code>
+        <li>food_message.call("brussels sprouts")</li></code>
+        <ul>
+          <li>#=> I love to eat brussels sprouts!</li>
+        </ul>
+      </ul>
+    </p>
+
+    <p>The other fork in the road of how these two work has to deal with how they treat
+      a return. Remember that when you use 'return' in a method definition, once Ruby
+      reads that return, its going to output whatever it is told to return and then leave
+      the method, as opposed to a 'puts' that will output something and then continue
+      with the method definition. If you tell a proc to return something, it is going to
+      evaluate it immediately and leave the method definition. While using 'return' the
+      proc is going to assume all control and exit the method definition. The lambda on
+      the other hand, is going to lay down and let the rest of the method definition run.
+      It will let Ruby go ahead and do the its normal thing of evaluating the last line
+      that it reads. Check out an example to make sense of it:</br>
+      <ul><code>
+        <li>def proc_test</li>
+          <ul>
+            <li>parent_says = <b>Proc.new</b> { return "Eat your veggies so you grow big and strong."}</li>
+            <li>parent_says.call</li>
+            <li>return "I didn't ask how the veggies taste, I told you to eat them!"</li>
+          </ul>
+        <li>end</il></br></code>
+      </ul>
+      <ul><code>
+        <li>def lambda_test</li>
+          <ul>
+            <li>parent_says = <b>lambda</b> { return "Eat your veggies so you grow big and strong."}</li>
+            <li>parent_says.call</li>
+            <li>return "I didn't ask how the veggies taste, I told you to eat them!"</li>
+          </ul>
+        <li>end</li></code>
+      </ul>
+      <ul>
+        <li><code>puts proc_test</code></li>
+          <ul>
+            <li>#=>Eat your veggies so you grow big and strong.</li>
+          </ul>
+        <li><code>puts lambda_test</code></li>
+          <ul>
+            <li>#=>I didn't ask how the veggies taste, I told you to eat them!</li>
+          </ul>
+      </ul>
+    </p>
+
+    <p>I hope that this explanation of blocks, procs and lambdas had shed some light
+      on what they are and how they work. Keep in mind that this is just simple
+      introduction into these topics. This was meant to get you familiar with the
+      basis of these Ruby concepts so that you can go forth and expand your understanding.
+      If you find something really cool, send me an email with a link I'd love to check
+      it out. And as always, if you have questions or notice something where I have missed
+      some crucial understanding in this post, please don't hesitate to contact me.
+    </p>
+    </p>
+
+  </section>
+</main>
+
