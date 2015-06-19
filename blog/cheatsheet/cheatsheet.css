@@ -1,0 +1,156 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: table;
+  background-image: url('backs/whitey.png');
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+}
+
+a {
+  color: black;
+}
+
+img {
+  height: 2em;
+  width: 2em;
+}
+summary:active, summary:hover, summary {
+  outline: none
+}
+
+.title {
+  font-size: 4em;
+  padding-top: 1em;
+  padding-left: 2em;
+  float: left;
+}
+
+.names {
+  height: 25%;
+  float: right;
+  margin: 0;
+  padding: 4%;
+  z-index: 2;
+}
+.content {
+  padding: 0;
+  width: 100%;
+  clear: both;
+}
+
+.ruby{
+  display: inline-block;
+  vertical-align: center;
+  background-image: url('backs/graylinen.png');
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: 1%;
+/*   margin-bottom: 1%; */
+  width: 25%;
+  height:100%;
+
+
+
+}
+
+.js{
+  display: inline-block;
+  vertical-align: top;
+  background-image: url('backs/graylinen.png');
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: 1%;
+  width: 25%;
+  height:100%;
+
+}
+
+.general{
+  display: inline-block;
+  vertical-align: top;
+  background-image: url('backs/graylinen.png');
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: 1%;
+  width: 25%;
+  height:100%;
+}
+
+.css{
+  display: inline-block;
+  vertical-align: center;
+  background-image: url('backs/graylinen.png');
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: 1%;
+/*   margin-bottom: 1%; */
+  width: 25%;
+  height:100%;
+
+}
+
+.SQL {
+  display: inline-block;
+  vertical-align: top;
+  background-image: url('backs/graylinen.png');
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: 1%;
+  width: 25%;
+  height:100%;
+
+}
+
+.theme {
+  border: 5px solid #3a3a3a;
+  font-size: 1.5em;
+}
+
+
+.top {
+  font-size: .9em;
+  background-image: url('backs/darklinen.png');
+  color: indianred;
+  padding-left: 1%;
+
+
+}
+
+h1 {
+  font-size: .9em;
+  background-image: url('backs/whitey.png');
+  padding: 0;
+  margin: 0;
+}
+
+
+.top p {
+  font-size: .7em;
+  background-image: url('backs/whitey.png');
+  color: black;
+  padding-left: 1%;
+
+}
+
+.sub {
+  background-image: url('backs/graylinen.png');
+  font-size: .9em;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom:5%;
+  color: black;
+
+}
+
+.sub p {
+  font-size: .9em;
+  background-image: url('backs/whitey.png');
+  color: black;
+  border: 1px solid black;
+}
