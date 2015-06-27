@@ -40,27 +40,46 @@ nav a {
   text-decoration: none;
 }
 
-#top {
-  padding-top: 2em;
-  padding-bottom: 2em;
-  padding-left: 1em;
+#container {
+  width: 100%;
+
+}
+
+#face {
+  float: left;
+  width: 30%;
+}
+img {
+  width: 80%;
+  padding-left: 3em;
+  padding-top: 5em;
+  padding-bottom: 4em;
+}
+
+#quip {
+  height: 100%;
+  font-size:2em;
+  text-align: center;
+  padding-top: 7em;
+  padding-bottom: 6em;
+  height: 100%;
+}
+
+#name {
+  font-size: 3em;
   font-weight: bold;
+  padding-bottom: 0.5em;
 }
 
-#one{
-  font-size: 3.5em;
+.line {
+  padding-bottom: 0.25em;
 }
 
-#two {
-  font-size: 2em;
-}
-
-#three {
-  font-size: 1.5em;
-}
-
-#meat {
-  font-size: 1.5em;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
+footer {
+  clear: both;
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+  /*position: fixed;*/
+  /*bottom: 0;*/
 }

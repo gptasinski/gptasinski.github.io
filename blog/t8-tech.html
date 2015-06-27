@@ -1,53 +1,54 @@
 <!DOCTYPE html>
+<html>
 <head>
-  <title>t8-tech blog</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
-  <link rel="stylesheet" type="text/css" href="site-index.css" >
   <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheets.css" >
+  <link rel="stylesheet" type="text/css" href="../stylesheets/t3-6-stylesheet.css" >
+  <title>t8-tech</title>
 </head>
+  <body>
 
-<main>
-  <div>
-    <nav>
-      <header>
-        <button class="one" type="button"><a href="../about_me.html">About Me</a></button>
-        <button class="one" type="button"><a href="../links.html">Links</a></button>
-        <button class="one" type="button"><a href="index.html">Blog</a></button>
-        <button class="one" type="button"><a href="../projects/index.html">Projects</a></button>
-        <button class="one" type="button"><a href="../contact.html">Contact</a></button>
-      </header>
-    </nav>
-  </div>
 
-  <section id="top">
-    <h1>Recursion</h1>
-    <h2>DBC Week 8: Challenge #7</h2>
-    <h4>June 19, 2015</h4>
-  </section>
+    <header>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="../about_me.html">About Me</a>
+        <a href="blog-index.html">Blog</a>
+        <a href="../projects/index.html">Projects</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </header>
 
-  <section>
 
-    <p>In programming recursion is a process where a function calls itself within
-      a block. I like to think of it as what that last line really says; a
-      method that uses recursion is a method where that method re-occurs. Why are
-      all the topics that I choose to blog about so cyclical in their explanation?
+    <section id="top">
+      <p id="one">Recursion</p>
+      <p id="two">DBC Week 8: Challenge #7</p>
+      <p id="three">June 19, 2015</p>
+    </section>
+
+    <section id="meat">
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;In programming recursion is a process where a
+      function calls itself within a block. I like to think of it as what that last
+      line really says; a method that uses recursion is a method where that method re
+      -occurs. Why are all the topics that I choose to blog about so cyclical in
+      their explanation?
     </p>
 
-    <p>As a matter of fact, just to keep in the theme of cyclical, you can think
-      about a recursive function being just like a loop.
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;As a matter of fact, just to keep in the theme of
+      cyclical, you can think about a recursive function being just like a loop.
     </p>
 
-    <p>Recursion can be used in a problem when a repeating pattern is recognizable.
-     The easiest way to show you how this works is to show it working through an
-     example and a story. So here goes. Imgine this:
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Recursion can be used in a problem when a repeating
+      pattern is recognizable. The easiest way to show you how this works is to show
+      it working through an example and a story. So here goes. Imgine this:
     </p>
 
-    <p>"99 Bottles of Beer". Heard of it? C'mon sure ya have. Who hasn't? Well
-      turns out you are traveling the world, and presently find yourself making
-      ends meet by tending bar in an out of the way Tiki Shack in some country
-      who's name you can't pronounce. You've been indulging in too many refreshing
-      libations with your crowd when you discover no one there has ever once
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;"99 Bottles of Beer". Heard of it? C'mon sure ya have.
+      Who hasn't? Well turns out you are traveling the world, and presently find
+      yourself making ends meet by tending bar in an out of the way Tiki Shack in some
+      country who's name you can't pronounce. You've been indulging in too many
+      refreshing libations with your crowd when you discover no one there has ever once
       chanced across a drunken uncle in a lawn chair singing this song. They all
       think it sounds like a great song, and should sing it, but they need the
       lyrics. You could just tell them the lyrics since they repeat easily enough,
@@ -55,24 +56,25 @@
       decide that it will be best to have some sheet music to refer to.
     </p>
 
-    <p>You tear a page out of your travel journal and start writing. "99 bottles of
-      beer on the wall, 99 bottles of beer! Take one down, pass it around, 98
-      bottles of beer on the wall!"
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;You tear a page out of your travel journal and start
+      writing. "99 bottles of beer on the wall, 99 bottles of beer! Take one down,
+      pass it around, 98 bottles of beer on the wall!"
     </p>
 
-    <p>Quickly you realize that no one is going to be left standing in the
-      establishment by the time you are get the whole song down. You
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Quickly you realize that no one is going to be left
+      standing in the establishment by the time you are get the whole song down. You
       need to figure out how to get these lyrics down on paper quickly, the crowd
-      isbrimming with anticipation. Looking back down on your paper it dawns on
+      is brimming with anticipation. Looking back down on your paper it dawns on
       you that the nearly the entire song is comprosed of those two sentences you
       just wrote. If you could only figure out how to automate the number of beers
       decreasing by 1, you could write a program to print out all the lyrics with
       all the correct bottle numbers, until there are no more bottles on the wall.
     </p>
 
-    <p>You clear a spot on the bar, open up your laptop, and get to work on a Ruby
-      script. First you start with a method definition:
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;You clear a spot on the bar, open up your laptop, and
+      get to work on a Ruby script. First you start with a method definition:
     </p>
+
     <p><code>&nbsp;def beer_bottles(num)<br/>
             &nbsp;&nbsp;return "No more bottles of beer on the wall!" if num <= 0<br/>
             &nbsp;&nbsp;puts "#{num} bottles of beers on the wall!, #{num} bottles of beer!"<br/>
@@ -81,24 +83,30 @@
             &nbsp;end</code><br/>
     </p>
 
-    <p>Thankfully you realized that by being passing the method an argument you
-      can control how long the song is going to last. You could call it "5 Bottles
-      of Beer on the Wall" if you wanted.
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Thankfully you realized that by being passing the
+      method an argument you can control how long the song is going to last. You could
+      call it "5 Bottles of Beer on the Wall" if you wanted.
     </p>
 
-    <p>You look it over, feel pretty slick, and call the method:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;You look it over, feel pretty slick, and call the
+      method:</p>
+
     <p><code>&nbsp;beer_bottles(99)</code></p>
-    <p>But all that prints out is:</p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;But all that prints out is:</p>
+
     <p><code class="output">&nbsp;99 bottles of beers on the wall!, 99 bottles of
       beer! take one down, pass it around, 98 bottles of beer on the wall!</code>
     </p>
-    <p>
-      The code is not counting down! It stopped after 98, it's supposed to go to 0.
-      You forgot the recursive part, the part that repeats itself until the goal
-      is met! Unless the function 'beer_bottles' actually calls 'beer_bottles'
-      inside itself, the lyrics are not going to print out past 1 minus the number
-      you give it. You go back to the keyboard and add one line to your script:
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;The code is not counting down! It stopped after 98,
+      it's supposed to go to 0. You forgot the recursive part, the part that repeats
+      itself until the goal is met! Unless the function 'beer_bottles' actually calls
+      'beer_bottles' inside itself, the lyrics are not going to print out past 1 minus
+      the number you give it. You go back to the keyboard and add one line to your
+      script:
     </p>
+
     <p><code>&nbsp;def beer_bottles(num)<br/>
             &nbsp;&nbsp;return "No more bottles of beer on the wall!" if num <= 0<br/>
             &nbsp;&nbsp;puts "#{num} bottles of beers on the wall!, #{num} bottles of beer!"<br/>
@@ -108,9 +116,10 @@
             &nbsp;end</code>
     </p>
 
-    <p>The shouts and hecklings from the crowd grow louder as you change it from
-      99 bottles to 3, just to make sure it works and run the code:
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;The shouts and hecklings from the crowd grow louder as
+      you change it from 99 bottles to 3, just to make sure it works and run the code:
     </p>
+
     <p><code class="output">&nbsp;3 bottles of beers on the wall!, 3 bottles of
         beer! Take one down, pass it around, 2 bottles of beer on the wall!<br/>
         &nbsp;2 bottles of beers on the wall!, 2 bottles of beer! Take one down,
@@ -118,36 +127,34 @@
         &nbsp;1 bottles of beers on the wall!, 1 bottles of beer! Take one down,
         pass it around, 0 bottles of beer on the wall!</code>
     </p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;You change the call back to 'beer_bottles(99)'' and run
+      the code for the crowd. Someone looks over your shoulder sees the screen and
+      soon thereafter the bar patrons are raccously belting out the tune. Good job!
+      You just used recursion.
+    </p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;This is a very basic and simple idea of how recursion
+      works, but I hope this made it easy to understand. If you are looking for more
+      examples of how recursion works without getting this silly song stuck in your
+      head try checking out one of the countless examples of how to build a method to
+      find the factorial of a number.This one draws it out very well:
+    </p>
+
     <p>
-      You change the call back to 'beer_bottles(99)'' and run the code for the
-      crowd. Someone looks over your shoulder sees the screen and soon thereafter a
-      the bar patrons are raccously belting out the tune. Good job! You just used
-      recursion.
+      &nbsp;&nbsp;<a href="http://kerrizor.com/blog/2014/04/29/recursion-an-example-in-ruby">Factorial Recursion Example</a>
     </p>
 
-    <p>This is a very basic and simple idea of how recursion works, but I hope this
-      made it easy to understand. If you are looking for more examples of how
-      recursion works without getting this silly song stuck in your head try
-      checking out one of the countless examples of how to build a method to find
-      the factorial of a number.This one draws it out very well:
-    </p>
-    <p>
-      &nbsp;&nbsp;<a href="http://kerrizor.com/blog/2014/04/29/recursion-an-example-in-ruby">Factorial Recursion Example</a>.
-    </p>
-    <p>
-      Or check out this video by Joshua Creek which walks you through building
-      examples in code:
-    </p>
-    <p>
-      &nbsp;&nbsp;<a href="https://vimeo.com/24716767">Recursion Video</a>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Or check out this video by Joshua Creek which walks you
+      through buildingexamples in code:
     </p>
 
-    <p>Thanks for taking the time to read this. Email me any questions or comments.
+    <p>&nbsp;&nbsp;<a href="https://vimeo.com/24716767">Recursion Video</a></p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Thanks for taking the time to read this. Email me any
+      questions or comments.
     </p>
-
-
-
 
   </section>
 </main>
-
+</html>

@@ -1,39 +1,42 @@
 <!DOCTYPE html>
+<html>
 <head>
-  <title>Week 3 Technical Blog Post</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
-  <link rel="stylesheet" type="text/css" href="../blog/site-index.css" >
   <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheets.css" >
-  <link rel="stylesheet" type="text/css" href="../stylesheets/t3-stylesheet.css" >
+  <link rel="stylesheet" type="text/css" href="../stylesheets/t3-6-stylesheet.css" >
+  <title>t3-arrays-hashes</title>
 </head>
+  <body>
 
-<main>
-  <div>
-    <nav>
-      <header>
-        <button class="one" type="button"><a href="../about_me.html">About Me</a></button>
-        <button class="one" type="button"><a href="../links.html">Links</a></button>
-        <button class="one" type="button"><a href="index.html">Blog</a></button>
-        <button class="one" type="button"><a href="../projects.html">Projects</a></button>
-        <button class="one" type="button"><a href="../contact.html">Contact</a></button>
-      </header>
-    </nav>
-  </div>
 
-  <section id="top">
-    <h1>Arrays and Hashes in Ruby</h1>
-    <h2>DBC Week 3, Challenge 7</h2>
-    <h4>May 14, 2015</h4>
-  </section>
+    <header>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="../about_me.html">About Me</a>
+        <a href="blog-index.html">Blog</a>
+        <a href="../projects/index.html">Projects</a>
+        <a href="../contact.html">Contact</a>
+    </header>
 
-  <section>
 
-    <p>So an array is an ordered list of objects. What exactly does that mean?</p>
-    <p>Think of an array as a container for storing data, like a filing cabinet
-      where the data can be placed sequentially one after the other. One of the
-      big concepts to remember is that in the filing cabinet where you plan on
-      storing this data, all of the file folders are already labeled with numbers,
+    <section id="top">
+      <p id="one">Arrays and Hashes in Ruby</p>
+      <p id="two">DBC Week 3: Challenge #7</p>
+      <p id="three">May 14, 2015</p>
+    </section>
+
+    <section id="meat">
+
+      <section>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;So an array is an ordered list of objects. What exactly
+      does that mean?
+    </p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Think of an array as a container for storing data, like
+      a filing cabinet where the data can be placed sequentially one after the other.
+      One of the big concepts to remember is that in the filing cabinet where you plan
+      on storing this data, all of the file folders are already labeled with numbers,
       and you can't change that. File folders are labeled starting with zero and
       count up to the last file in the drawer (this is the index of the drawer). The
       folders also have a label that starts at the last file with -1 and moves up to
@@ -43,132 +46,187 @@
       various ways. Keep in mind that this data needs to be in the form of an object;
       a number, a string or even another array (even a hash). You can create an array
       in a number of different ways, but the most straightforward is with literal
-      notation. Here's what that might look like:</p>
-    <p><code>array_name = ["data_1", "data_2", "data_3", ....]</code><br /></p>
-    <p>You give your array a name, open brackets, start putting in data bound with
-      quotes, and close the bracket. You can add as many pieces of data that you wish.
-      The important thing to remember is that when you want to retrieve your data, you
-      can only do it by the index number. Remember that the index numbers start at 0,
-      so the first file in the drawer is file 0. The negative index starts at -1, so
-      counting from the back, the first file is file -1.
+      notation. Here's what that might look like:
     </p>
-    <p>Imaging this:<br />
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<code>array_name = ["data_1", "data_2", "data_3", ....]</code><br />
+    </p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;You give your array a name, open brackets, start
+      putting in data bound with quotes, and close the bracket. You can add as many
+      pieces of data that you wish. The important thing to remember is that when you
+      want to retrieve your data, you can only do it by the index number. Remember
+      that the index numbers start at 0, so the first file in the drawer is file 0.
+      The negative index starts at -1, so counting from the back, the first file is
+      file -1.
+    </p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Imaging this:<br />
       You're a coach of a little league team and you have a really hard time
       remembering things. You have just heard the schedule of games for your season
       and you want to make a list of all the games to be played that season from
       the first to the last. Your list can be easily made into an array like this:
     </p>
-    <p><code>game_schedule = ["Bears", "Colts", "Lions", "Vikings", "Broncos"]</code>
-    </p>
-    <p>Now if you want to access the information in the array, say the third team you
-      are playing for example, you look for it by it's position number:
-      the third team has an index position of 2. Check it out:</p>
 
-    <p>You want to find who you are playing for the third game (don't forget the
-      keyword "puts" or nothing will be printed to the screen):</p>
-    <p><code>puts game_schedule[2]    => "Lions"</code></p>
-    <p>Say you want to find the second to last game you are going to play. Just use
-     the negative index this time. Remember it starts from -1 and counts backwards,
-     and don't forget your "puts":</p>
-    <p><code>puts game_schedule[-2]   => "Vikings"</code></p>
-    <p>You realize that you made a mistake and your first game is not against the
-      Bears, but actually against the Packers. There's no reason to start from
-      scratch thanks to the Array#unshift method. It works like this:</p>
-    <p><code>game_schedule.unshift("Seahawks")</code></p>
-    <p>You can now take a look at what is in your array:
-    <p><code>puts game_schedule   =><br />
-                    Seahawks<br />
-                    Bears<br />
-                    Colts<br />
-                    Lions<br />
-                    Viking<br />
-                    Broncos<br /></code></p>
-    <p>Need to add a game to the end of the list? There's a method for that too:"</p>
-    <p><code>game_schedule.push("Falcons")</code></p>
-    <p> If you want to look at what your array looks like now, just "puts
-      game_schedule" again just like the above, and you will see the updated list.
-      The only thing to remember is that since you have now changed the list, you
-      have now changed the index numbers of all the games in the schedule.
-      "Seahawks" is now at game_schedule[0], and the "Bears" have been bumped
-      to the position of game_schedule[1]. </p>
-    <p>This is just the tip of the iceberg. There are methods that will allow you
-      to take the last item off the array list (Array#pop), delete specific items
-      (Array#delete_at(position)), change the item at a specific position
-      (array_name[position_number] = "new_item_name"), and many many more. There are
-      many more ways that you can manipulate this information not listed here, but if
-      I don't stop here, I'll have no time for Hashes. If you want to read more on
-      Arrays, different ways to build them and what you can do with them, go and check
-      this out: <a href="http://ruby-doc.org/core-2.2.0/Array.html">Ruby Doumentation
-      for Arrays</a>. Have fun!</p>
-
-    <p>And now on to hashes.</p>
-    <p>Hashes are similar to arrays in the fact that they are also containers for
-      storing data. Hashes are going to work like a filing cabinet as well, but this
-      time your folders are not labeled with numbers, they aren't labeled yet.
-      What the hell does that mean you ask? Well hashes are containers that hold
-      data in what is called a key-value pair, and they are both objects. Think
-      of it this way:</p>
-    <p>Arrays also have a kind of key-value pair: the numbers are the keys, the
-      position_number of that data element to be exact, and the values are the
-      data that is listed at that position number. An array has this characteristic
-      set up already, you can not change it. Hashes however let you decide what the
-      key is.
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<code>game_schedule = ["Bears", "Colts", "Lions", "Vikings", "Broncos"]</code>
     </p>
-    <p>Think of it again as a filing cabinet. But this time the "hash" drawer has
-      blank labels on the file folders, and you can label them with whatever your
-      heart desires. Just don't choose a number for the label, that's just going to
-      confuse your hash drawer (if you want to use numbers go and create an array).
-      What this allows you to do is find the value you are looking for without
-      knowing its position number, because a hash doesn't care about order. The
-      keys are really what keep the data (their value pair) indexed, the order of
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Now if you want to access the information in the array,
+      say the third team you are playing for example, you look for it by it's position
+      number: the third team has an index position of 2. Check it out:
+    </p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;You want to find who you are playing for the third game
+      (don't forget the keyword "puts" or nothing will be printed to the screen):
+    </p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<code>puts game_schedule[2]    => "Lions"</code></p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Say you want to find the second to last game you are
+      going to play. Just use the negative index this time. Remember it starts from -1
+      and counts backwards, and don't forget your "puts":</p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<code>puts game_schedule[-2]   => "Vikings"</code></p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;You realize that you made a mistake and your first game
+      is not against the Bears, but actually against the Packers. There's no reason to
+      start from scratch thanks to the Array#unshift method. It works like this:</p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<code>game_schedule.unshift("Seahawks")</code></p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;You can now take a look at what is in your array:
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<code>puts game_schedule   =><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Seahawks<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Bears<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Colts<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Lions<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Viking<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;Broncos<br /></code>
+    </p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Need to add a game to the end of the list? There's a
+      method for that too:"</p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<code>game_schedule.push("Falcons")</code></p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;If you want to look at what your array looks like now,
+      just "puts game_schedule" again just like the above, and you will see the
+      updated list. The only thing to remember is that since you have now changed the
+      list, you have now changed the index numbers of all the games in the schedule.
+      "Seahawks" is now at game_schedule[0], and the "Bears" have been bumped to the
+      position of game_schedule[1].
+    </p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;This is just the tip of the iceberg. There are methods
+      that will allow you to take the last item off the array list (Array#pop), delete
+      specific items (Array#delete_at(position)), change the item at a specific
+      position (array_name[position_number] = "new_item_name"), and many many more.
+      There are many more ways that you can manipulate this information not listed
+      here, but if I don't stop here, I'll have no time for Hashes. If you want to
+      read more on Arrays, different ways to build them and what you can do with them,
+      go and check this out: <a href="http://ruby-doc.org/core-2.2.0/Array.html">Ruby
+      Doumentation for Arrays</a>. Have fun!
+    </p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;And now on to hashes.</p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Hashes are similar to arrays in the fact that they are
+      also containers for storing data. Hashes are going to work like a filing cabinet
+      as well, but this time your folders are not labeled with numbers, they aren't
+      labeled yet. What the hell does that mean you ask? Well hashes are containers
+      that hold data in what is called a key-value pair, and they are both objects.
+      Think of it this way:
+    </p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Arrays also have a kind of key-value pair: the numbers
+      are the keys, the position_number of that data element to be exact, and the
+      values are the data that is listed at that position number. An array has this
+      characteristicset up already, you can not change it. Hashes however let you
+      decide what the key is.
+    </p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Think of it again as a filing cabinet. But this time
+      the "hash" drawer has blank labels on the file folders, and you can label them
+      with whatever your heart desires. Just don't choose a number for the label,
+      that's just going to confuse your hash drawer (if you want to use numbers go and
+      create an array). What this allows you to do is find the value you are looking
+      for without knowing its position number, because a hash doesn't care about order.
+      The keys are really what keep the data (their value pair) indexed, the order of
       the array is just the order that they were entered in. C'mon Coach, let's take
-      another look at this:</p>
-    <p>You are taking a look at your array list and you think to yourself, "Well this
-      helps, but with so many games and so many locations, how am I going to keep it
-      all straight." Enter the hash. You can create a hash, in almost the same
-      literal notation as we used for the array, that is composed of data in key-value pairs. Take the name of the team you are playing and associate it to
-      the address of the field where the game will be played. Check it out:</p>
-    <p><code>game_location = {
+      another look at this:
+    </p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;You are taking a look at your array list and you think
+      to yourself, "Well this helps, but with so many games and so many locations, how
+      am I going to keep it all straight." Enter the hash. You can create a hash, in
+      almost the same literal notation as we used for the array, that is composed of
+      data in key-value pairs. Take the name of the team you are playing and associate
+      it to the address of the field where the game will be played. Check it out:
+    </p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<code>game_location = {
                 "Seahawks" => "CenturyLink Field",
                 "Bears" => "Soldier Field",
                 "Colts" => "Lucas Oil Stadium",
                 "Lions" => "Ford Field",
-                "Vikings" => "New Minnesota Stadium",
-    }</code></p>
-    <p>The key is the name of the team and the value is name of the stadium you are
-      going to play in. That's right, all your games are away, and your little league
-      team is super big time, and you are going to play in NFL stadiums. Please
-      stay with me here.</p>
-    <p>The key-value pairs are tied together, one object pointing to the other, as
-      opposed to an array where a position number is pointing to an object. So now
-      if you want to check where you are playing the Vikings, you search for the
-      location by means of file folder labeled "Vikings" :</p>
-    <p><code>game_location["Vikings"]    => "New Minnesota Field"</code></p>
-    <p>You have the ability to list out the contents of the hash just like typing
-      in "puts and the hash_name" like we did with the array above. You can also
-      list out what all the keys in the hash are, or what all the values in the
-      hash are. Here, check it out:</p>
-    <p><code> puts game_location.keys   => ["Seahawks", "Bears", "Colts", "Lions",
-      "Vikings"]</code><br />
-      <code>puts game_location.values  => ["CenturyLink Field", "Soldier Field",
-      "Lucas Oil Stadium", "Ford Field", "New Minnesota Stadium"]</code></p>
-    <p>You want to add a game? Sure, no problem. Type it out like this:</p>
-    <p><code>game_location["Chargers"] = "Qualcomm Stadium"</code></p>
-    <p>You can go back and see that this new key-value pair, "Chargers" =>"Qualcomm
-      Stadium", has been added to the hash with a simple "puts game_location".</p>
-    <p>You can't remember if you put in the key value pair for "Bears"? No problem.
-    You can ask the hash if it includes a key or value with the "has_key?" or the
-    "has_value?" methods, and will give respond true or false if it has it or not:</p>
-    <p><code>game_location.has_key?("Bears)     => true<br />
-      game_location.has_key?("Packers")   => false</code></p>
-    <p><code>game_location.has_value?("Lucas Oil Stadium")  => true<br />
-      game_location.has_value?("Chicago Stadium")   => false</code></p>
-    <p>Once again this is a very humble start, and there is a whole lot more that
-      you can do with hashes. There are different ways to create them, different
-      methods to call on them (commands to give them), and ways to manipulate the
-      data. If you want to read more on hashes and the power that they can wield,
-      go check this out: <a href="http://ruby-doc.org/core-2.2.0/Hash.html">Ruby Documentation on Hashes</a>. Enjoy yourself!</p>
+                "Vikings" => "New Minnesota Stadium"}</code>
+    </p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;The key is the name of the team and the value is name
+      of the stadium you are going to play in. That's right, all your games are away,
+      and your little league team is super big time, and you are going to play in NFL
+      stadiums. Please stay with me here.
+    </p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;The key-value pairs are tied together, one object
+      pointing to the other, as opposed to an array where a position number is
+      pointing to an object. So now if you want to check where you are playing the
+      Vikings, you search for the location by means of file folder labeled "Vikings" :
+    </p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<code>game_location["Vikings"]    => "New Minnesota
+      Field"</code></p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;You have the ability to list out the contents of the
+      hash just like typing in "puts and the hash_name" like we did with the array
+      above. You can also list out what all the keys in the hash are, or what all the
+      values in the hash are. Here, check it out:
+    </p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<code>puts game_location.keys   => ["Seahawks",
+      "Bears", "Colts", "Lions","Vikings"]</code><br />
+      &nbsp;&nbsp;&nbsp;&nbsp;<code>puts game_location.values  => ["CenturyLink Field", "Soldier Field",
+      "Lucas Oil Stadium", "Ford Field", "New Minnesota Stadium"]</code>
+    </p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;You want to add a game? Sure, no problem. Type it out
+      like this:</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<code>game_location["Chargers"] = "Qualcomm Stadium"</code></p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;You can go back and see that this new key-value pair,
+      "Chargers" =>"Qualcomm Stadium", has been added to the hash with a simple "puts
+      game_location".</p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;You can't remember if you put in the key value pair for
+      "Bears"? No problem. You can ask the hash if it includes a key or value with the
+      "has_key?" or the "has_value?" methods, and will give respond true or false if
+      it has it or not:</p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<code>game_location.has_key?("Bears) => true<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;game_location.has_key?("Packers")   => false</code></p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;<code>game_location.has_value?("Lucas Oil Stadium")  =>
+      true<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;game_location.has_value?("Chicago Stadium")   => false</code></p>
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;Once again this is a very humble start, and there is a
+      whole lot more that you can do with hashes. There are different ways to create
+      them, different methods to call on them (commands to give them), and ways to
+      manipulate the data. If you want to read more on hashes and the power that they
+      can wield, go check this out: <a href="http://ruby-doc.org/core-2.2.0/Hash.html">
+      Ruby Documentation on Hashes</a>. Enjoy yourself!
+    </p>
 
   </section>
 </main>
-
+</html>

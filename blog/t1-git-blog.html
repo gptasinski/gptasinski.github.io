@@ -1,103 +1,99 @@
 <!DOCTYPE html>
+<html>
 <head>
-  <title>Week 1 Technical Blog Post</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
-  <link rel="stylesheet" type="text/css" href="../blog/site-index.css" >
   <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheets.css" >
+  <title>t1-git-blog-html</title>
 </head>
+  <body>
 
-<main>
-  <div>
-    <nav>
-      <header>
-        <button class="one" type="button"><a href="../about_me.html">About Me</a></button>
-        <button class="one" type="button"><a href="../links/html">Links</a></button>
-        <button class="one" type="button"><a href="index.html">Blog</a></button>
-        <button class="one" type="button"><a href="../projects.html">Projects</a></button>
-        <button class="one" type="button"><a href="../contacts.html">Contact</a></button>
-      </header>
-    </nav>
-  </div>
 
-  <section id="top">
-    <h1>Version Control, Git and GitHub</h1>
-    <h2>DBC Week 1 Challenge #11</h2>
-    <h4>April 30, 2015</h4>
-  </section>
+    <header>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="../about_me.html">About Me</a>
+        <a href="blog-index.html">Blog</a>
+        <a href="../projects/index.html">Projects</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </header>
 
-  <section>
-    <p>
-      I tried to get a jumpstart on my work for DBC Phase 0 last week by setting
-      up Git and my GitHub account, but, well, it didn't go so well. I thought
-      they were one and the same. I set up the my username on GitHub, thought
-      that meant I had Git, and was proud of myself. Then I started going through
-      the challenges on Monday, and my pride deflated. You'll be happy to know
-      that my little balloon of pride is filling back up. I think I've got it
-      together,or separated actually, now, since I've been using it the past
-      few days to complete the challenges for Week 1 Curriculum.
-    </p>
-    <p>
-        Warning: after you read this, go look these things up. I've been
-        working with Git and GitHub for about four days now, and although I've
-        made it work and feel confident with it... eh, well, I've been wrong
-        plenty of times before. If you go research and find out I'm as wrong
-        as I hoped I wouldn't be, let me in on it. We can tweet about it!
-    </p>
-    <p>
-        <strong>What are the benefit's of Version Control?</strong>
-    </p>
-    <p>
-        Well, first off let's talk about what version control is. Version
-        Control really is just a fancy way of saying a method of keeping track
-        of all the versions you're making to to something you are working on.
-        With version control you have the ability to go back in time and look
-        at each version of your work that you have changed. Imagine you have a
-        timline of whatever project it is you are working on. What version
-        control allows you to do is make a stamp on that timeline for every
-        change (edit, subtrction, addition) that takes place on your project.
-        Then through the 'magic' of Git and GitHub you can go back to those
-        stamps you placed on the timeline to see what you changed, see who
-        may have changed it (in case it wasn't you), and when it changed. With
-        Git and GitHub you also have the ability to make comments on your
-        changes, just to keep you aware of why some changes on that stamp may
-        have been made. The benefit to this is that if you make a change to
-        your project that, say 'gummed up the works', you can go back to the
-        version (stamp) before it and work from there, the project does not
-        hae to be scrapped and you do not have to start over form the beginning.
-        The other major benefit to version conrol is that it makes group work
-        much more fluid. Each team member can get a copy of the project, do
-        their work on it and save it. The work they did can be reviewed before
-        it is all merged together, and there's no chance that team members are
-        going to be changing someone elses's chages before they know about it.
+
+    <section id="top">
+      <p id="one">Version Control, Git and GitHub</p>
+      <p id="two">DBC Week 1: Challenge #11</p>
+      <p id="three">April 30, 2015</p>
+    </section>
+
+    <section id="meat">
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;I tried to get a jumpstart on my work for DBC Phase 0
+        last week by setting up Git and my GitHub account, but, well, it didn't go so
+        well. I thought they were one and the same. I set up the my username on
+        GitHub, thought that meant I had Git, and was proud of myself. Then I started
+        going through the challenges on Monday, and my pride deflated. You'll be happy
+        to know that my little balloon of pride is filling back up. I think I've got it
+        together,or separated actually, now, since I've been using it the past few
+        days to complete the challenges for Week 1 Curriculum.
       </p>
-      <p>
-        <strong>How does Git help you keep track of changes?</strong>
+
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;Warning: after you read this, go look these things up.
+       I've been working with Git and GitHub for about four days now, and although I've
+       made it work and feel confident with it... eh, well, I've been wrong plenty of
+       times before. If you go research and find out I'm as wrong as I hoped I
+       wouldn't be, let me in on it. We can tweet about it!
       </p>
-      <p>
-        Git helps you keep track of changes by tracking what's going on with
-        your project on your computer. Git is software that you download on your
-        computer, you don't need an Internet connection to use it. Once you have
-        a directory that is git initialized, as you work on your project you can
-        go back to your terminal and check to see where it is in terms of changes.
-        By using the command 'git status' you can find out if your file has changed,
-        how many changes have been made, if the file is tracked and ready to be
-        saved, or if he file has already been saved (called commit for git). You
+
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>What are the benefit's of Version Control?</
+        strong></p>
+
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;Well, first off let's talk about what version control
+        is. Version Control really is just a fancy way of saying a method of keeping
+        track of all the versions you're making to to something you are working on.
+        With version control you have the ability to go back in time and look at each
+        version of your work that you have changed. Imagine you have a timline of
+        whatever project it is you are working on. What version control allows you to
+        do is make a stamp on that timeline for every change (edit, subtrction,
+        addition) that takes place on your project. Then through the 'magic' of Git
+        and GitHub you can go back to those stamps you placed on the timeline to see
+        what you changed, see who may have changed it (in case it wasn't you), and
+        when it changed. With Git and GitHub you also have the ability to make
+        comments on your changes, just to keep you aware of why some changes on that
+        stamp may have been made. The benefit to this is that if you make a change to
+        your project that, say 'gummed up the works', you can go back to the version (
+        stamp) before it and work from there, the project does not have to be scrapped
+        and you do not have to start over form the beginning. The other major benefit
+        to version conrol is that it makes group work much more fluid. Each team
+        member can get a copy of the project, do their work on it and save it. The
+        work they did can be reviewed before it is all merged together, and there's no
+        chance that team members are going to be changing someone elses's chages
+        before they know about it.
+      </p>
+
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>How does Git help you keep track of changes?</
+        strong></p>
+
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;Git helps you keep track of changes by tracking
+        what's going on with your project on your computer. Git is software that you
+        download on your computer, you don't need an Internet connection to use it.
+        Once you have a directory that is git initialized, as you work on your project
+        you can go back to your terminal and check to see where it is in terms of
+        changes. By using the command 'git status' you can find out if your file has
+        changed, how many changes have been made, if the file is tracked and ready to
+        be saved, or if he file has already been saved (called commit for git). You
         can delete changes or even delete the changed files without affecting the
         original.
       </p>
-      <p>
-        <strong>Why store your work on GitHub</strong>
-      </p>
-      <p>
-        Well first off we need to know what GitHub is. GitHub works just like git,
-        but instead of living in your computer, it lives on the Internet. You can
-        take all the timeline stamps of your project that you have made and store
-        them on GitHub almost like a cloud, yet with the big difference that other
-        people can access your project. GitHub is like the offspring of a social
-        networking site and cloud storage. You can store your work there and allow
-        other people to see it, pull it into their own computer, edit it, and then
-        they can load those changes back onto GitHub. It makes a lot of sense to
+
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Why store your work on GitHub</strong></p>
+
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;Well first off we need to know what GitHub is. GitHub
+        works just like git, but instead of living in your computer, it lives on the
+        Internet. You can take all the timeline stamps of your project that you have
+        made and store them on GitHub almost like a cloud, yet with the big difference
+        that other people can access your project. GitHub is like the offspring of a
+        social networking site and cloud storage. You can store your work there and
+        allow other people to see it, pull it into their own computer, edit it, and
+        then they can load those changes back onto GitHub. It makes a lot of sense to
         store your projects on GitHub because you it can be collaborated upon (and
         you can collaborate on other people's projects). By storing your work on
         GitHub you also allow yourself the ability to access it from multiple places.
@@ -112,14 +108,14 @@
         on GitHub is the same master copy on your computer. That way you are not
         wasting time fixing something, that may have already been fixed and posted
         by someone else.
-        </p>
-        <p>
-        So, that may have been lengthy and long winded, but hey, I'm a Chicagoan.
-        Hopefully this makes some sense out of git and GitHub and Version Control,
-        and we can all go on to collaborate together on massive projects that
-        will feed, pacify and heal the world. See you then!
-        </p>
+      </p>
 
-  </section>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;So, that may have been lengthy and long winded, but
+        hey, I'm a Chicagoan. Hopefully this makes some sense out of git and GitHub
+        and Version Control, and we can all go on to collaborate together on massive
+        projects that will feed, pacify and heal the world. See you then!
+      </p>
+
+
 </main>
-
+</html>

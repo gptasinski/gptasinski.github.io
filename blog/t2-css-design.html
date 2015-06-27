@@ -1,127 +1,126 @@
 <!DOCTYPE html>
+<html>
 <head>
-  <title>Week 2 Technical Blog Post</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
-  <link rel="stylesheet" type="text/css" href="../blog/site-index.css" >
   <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheets.css" >
+  <title>t2-css-design</title>
 </head>
+  <body>
 
-<main>
-  <div>
-    <nav>
-      <header>
-        <button class="one" type="button"><a href="../about_me.html">About Me</a></button>
-        <button class="one" type="button"><a href="../links.html">Links</a></button>
-        <button class="one" type="button"><a href="index.html">Blog</a></button>
-        <button class="one" type="button"><a href="../projects.html">Projects</a></button>
-        <button class="one" type="button"><a href="../contact.html">Contact</a></button>
-      </header>
-    </nav>
-  </div>
 
-  <section id="top">
-    <h1>Static, Absolute,Fixed and Relative Positioning</h1>
-    <h2>DBC Week 2, Challenge #10</h2>
-    <h4>May 9, 2015</h4>
-  </section>
+    <header>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="../about_me.html">About Me</a>
+        <a href="blog-index.html">Blog</a>
+        <a href="../projects/index.html">Projects</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </header>
 
-  <section>
 
-    <p>Let me just say this first, I chose the topic that I am struggling with the
-    most. I've found that trying to explain a concept to someone else helps me further
-    my understanding and figure things out. That said, if there's any point that I
-    make here that's just way off, or if you have questions, or maybe just want to
-    bond and chat about the frustrations had while digesting this concept, please
-    email me.</p>
+    <section id="top">
+      <p id="one">Static, Absolute, Fixed and Relative Positioning</p>
+      <p id="two">DBC Week 2: Challenge #10</p>
+      <p id="three">May 9, 2015</p>
+    </section>
 
-    <p>So then, <br />
-    Positioning is controlled by the position property. The position property
-    has four values: Absolute, Fixed, Relative and Static. Each one of these position
-    properties can be further manipulated with four "offsets": top, right, bottom
-    and left. Once the position property is set to absolute, fixed, relative or static
-    you can then set one of these "offsets" to tell the element to now move a specific
-    distance from its position just so far from the top, right botom or left. I think
-    of these "offsets" working like x and y coordinates on a graph. You really only
-    need to use one of them at a time, effectively giving position specifics to a
-    corner of the element.
-    </p>
+    <section id="meat">
 
-    <p>However it's not as straight forward as that. Each position property reacts
-    to those four "offsets" in a specific way.
-    </p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;Let me just say this first, I chose the topic that I
+        am struggling with the most. I've found that trying to explain a concept to
+        someone else helps me further my understanding and figure things out. That
+        said, if there's any point that I make here that's just way off, or if you
+        have questions, or maybe just want to bond and chat about the frustrations had
+        while digesting this concept, please email me.
+      </p>
 
-    <p>
-    Let's go through them one by one.<br />
-    <strong>STATIC:</strong> static positioning is the one that doesn't listen to
-    any of those offsets mentioned above. Static positioning will disable CSS positioning, meaning that none of those offests will have an effect, making it
-    the one the will rarely ever be used. If you are trying to position an element,
-    why use the position property that doesn't listen to CSS positioning?
-    </p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;So then, <br />
+        Positioning is controlled by the position property. The position property
+        has four values: Absolute, Fixed, Relative and Static. Each one of these
+        position properties can be further manipulated with four "offsets": top,
+        right, bottom and left. Once the position property is set to absolute, fixed,
+        relative or static you can then set one of these "offsets" to tell the element
+        to now move a specific distance from its position just so far from the top,
+        right botom or left. I think of these "offsets" working like x and y
+        coordinates on a graph. You really only need to use one of them at a time,
+        effectively giving position specifics to a corner of the element.
+      </p>
 
-    <p>
-    <strong>ABSOLUTE:</strong> absolute positioning is the most straightforward
-    of the four. It will position an element right where you tell it to by using
-    any of those offests. I feel particularly comfortable with this one because
-    even if you resize the window, an element with absolute positioning will stay
-    right where you told it. Elements can overlap each other in absolute positioning
-    but you can control their appearance with the z-index. Whichever element has the
-    higher z-index will be positioned on top. Positioning can get tricky when you
-    need to position an element inside of another (its parent element or container
-    block). When you try to do this with absolute positioning, the element will be
-    set according to or relative to the nearest positioned element. If there happens
-    to be no other element with a set position in the document, then the absolutely
-    positioned element will be set according to the window. In simple terms if you try
-    to position something inside of an element that itself has a position property
-    set, your offsets move it in relation to the container element. If that container
-    element has no position set that the element is set in relation to the browser
-    window.
-    </p>
-    <p>
-    <strong>FIXED:</strong> think of using fixed positioning as using Super Glue.
-    An element with a fixed position is "stuck" to the browser and will stay in place
-    if you scroll through the page, and it will overlap the other elements in the
-    page. Fixed works a little like absolute in the fact that you can set offsets on
-    the element and tell it exactly where to go. In the context of setting a fixed
-    element inside of another element, a container block, the fixed element is set
-    according to the browser window. Your offets need to be interacting with the
-    browser window and not the container element itself. If there is an element below
-    your fixed element, you need to set an offset on that element so that it isn't
-    covered up by the fixed element. As an example in simpler terms take a look at
-    this blog post. The navigation bar at the top is using a fixed element. The
-    header below it, with the blog title and date has a top margin of 125px so that
-    it is not displayed behind the navigation bar and you are able to read it.
-    </p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;However it's not as straight forward as that. Each
+        position property reacts to those four "offsets" in a specific way.
+      </p>
 
-    <p>
-    <strong>RELATIVE:</strong> is the position property that positions an element
-    relative to its normal position: where it would have been without any positioning
-    settings. The offests move the element from where it would have been placed, not
-    from the other elements on the page. This position property doesn't affect the
-    other elements on the browser, and the browser treats them as separate elements.
-    Setting the offsets of a relatively positioned element inside of a container
-    block will move the element according to where it would have been positioned
-    in the container without those offsets, not according to the container itself.
-    </p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp; Let's go through them one by one.<br />
+        <strong>STATIC:</strong> static positioning is the one that doesn't listen to
+        any of those offsets mentioned above. Static positioning will disable CSS
+        positioning, meaning that none of those offests will have an effect, making it
+        the one the will rarely ever be used. If you are trying to position an element,
+        why use the position property that doesn't listen to CSS positioning?
+      </p>
 
-    <p>
-    For some final notes I have to say that even with a better understanding of the
-    position property, I think it's necessary to start small. Create the HTML
-    document without positioning elements, and then start tweaking the positioning
-    of the top most element, say the container block. Move downward through the
-    elements of the document in order as they should be placed to avoid frustration.
-    I hope this helped, and please feel free to contact me with corrections and
-    questions.
-    </p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>ABSOLUTE:</strong> absolute positioning is
+        the most straightforward of the four. It will position an element right where
+        you tell it to by using any of those offests. I feel particularly comfortable
+        with this one because even if you resize the window, an element with absolute
+        positioning will stay right where you told it. Elements can overlap each other
+        in absolute positioning but you can control their appearance with the z-index.
+        Whichever element has the higher z-index will be positioned on top.
+        Positioning can get tricky when you need to position an element inside of
+        another (its parent element or container block). When you try to do this with
+        absolute positioning, the element will be set according to or relative to the
+        nearest positioned element. If there happens to be no other element with a set
+        position in the document, then the absolutely positioned element will be set
+        according to the window. In simple terms if you try to position something
+        inside of an element that itself has a position property set, your offsets
+        move it in relation to the container element. If that container element has no
+        position set that the element is set in relation to the browser window.
+      </p>
 
-    <p>
-    I have to give a big thank you to Spencer Rohan for posting the Dreamweaver
-    Tutorial on how CSS positioning works, as well as the people who created it.
-    Until I watched that video I felt as if I were treading water with this material
-    and now I feel that I have at least a strong doggie paddle.
-    </p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>FIXED:</strong> think of using fixed
+        positioning as using Super Glue. An element with a fixed position is "stuck"
+        to the browser and will stay in place if you scroll through the page, and it
+        will overlap the other elements in the page. Fixed works a little like
+        absolute in the fact that you can set offsets on
+        the element and tell it exactly where to go. In the context of setting a fixed
+        element inside of another element, a container block, the fixed element is set
+        according to the browser window. Your offets need to be interacting with the
+        browser window and not the container element itself. If there is an element
+        below your fixed element, you need to set an offset on that element so that it
+        isn't covered up by the fixed element. As an example in simpler terms take a
+        look at this blog post. The navigation bar at the top is using a fixed element.
+        The header below it, with the blog title and date has a top margin of 125px so
+        that it is not displayed behind the navigation bar and you are able to read it.
+      </p>
+
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>RELATIVE:</strong> is the position property
+        that positions an element relative to its normal position: where it would have
+        been without any positioning settings. The offests move the element from where
+        it would have been placed, not from the other elements on the page. This
+        position property doesn't affect the other elements on the browser, and the
+        browser treats them as separate elements. Setting the offsets of a relatively
+        positioned element inside of a container block will move the element according
+        to where it would have been positioned in the container without those offsets,
+        not according to the container itself.
+      </p>
+
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;For some final notes I have to say that even with a
+        better understanding of the position property, I think it's necessary to start
+        small. Create the HTML document without positioning elements, and then start
+        tweaking the positioning of the top most element, say the container block.
+        Move downward through the elements of the document in order as they should be
+        placed to avoid frustration. I hope this helped, and please feel free to
+        contact me with corrections and questions.
+      </p>
+
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;I have to give a big thank you to Spencer Rohan for
+        posting the Dreamweaver Tutorial on how CSS positioning works, as well as the
+        people who created it. Until I watched that video I felt as if I were treading
+        water with this material and now I feel that I have at least a strong doggie
+        paddle.
+      </p>
 
 
   </section>
 </main>
-
+</html>

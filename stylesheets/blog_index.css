@@ -1,0 +1,70 @@
+* {
+  padding: 0;
+  margin: 0;
+  color: gray;
+}
+
+/*body {
+  background-image: url('wrapping-paper.jpg');
+  background-size: cover;
+
+}*/
+
+h1 {
+  text-align: center;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  font-size: 4em;
+}
+
+.sub {
+  font-size: 2em;
+  padding-bottom: 0.1em;
+}
+
+#cult {
+  text-align: left;
+  padding-left: 1em;
+  width: 45%;
+  font-size: 1.75em;
+}
+
+#tech {
+  float: right;
+  text-align: left;
+  width: 45%;
+  padding-left: 1em;
+  margin-top: -29%;
+  font-size: 1.75em;
+  padding-bottom: 2.5em;
+}
+
+article p {
+  padding-bottom: 0.5em;
+}
+
+a {
+  text-decoration: none;
+  /*padding-bottom: em;*/
+}
+
+/*footer {
+  padding-top: 7.4em;
+}*/
+
+b {
+  text-decoration: underline;
+}
+
+a:link {
+  color: gray;
+}
+
+a:visited {
+  color: rgb(94, 110, 117);
+}
+
+a:hover {
+  color: rgb(144, 165, 191);
+
+}

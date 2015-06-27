@@ -1,106 +1,102 @@
 <!DOCTYPE html>
+<html>
 <head>
-  <title>t7-JavaScript.html</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
-  <link rel="stylesheet" type="text/css" href="../blog/site-index.css" >
   <link rel="stylesheet" type="text/css" href="../stylesheets/blog-stylesheets.css" >
+  <title>t7-JavaScript</title>
 </head>
-
-<main>
-  <div>
-    <nav>
-      <header>
-        <button class="one" type="button"><a href="../about_me.html">About Me</a></button>
-        <button class="one" type="button"><a href="../links.html">Links</a></button>
-        <button class="one" type="button"><a href="index.html">Blog</a></button>
-        <button class="one" type="button"><a href="../projects/index.html">Projects</a></button>
-        <button class="one" type="button"><a href="../contact.html">Contact</a></button>
-      </header>
-    </nav>
-  </div>
-
-  <section id="top">
-    <h1>Ruby vs. JavaScript: An Error Primer</h1>
-    <h2>DBC Week 7: Challenge #9</h2>
-    <h4>June 12, 2015</h4>
-  </section>
-
-  <section>
-
-    <p>Sitting here trying to think about a fundamental difference between Ruby
-      and JavaScript the first thing that comes to mind is the error message. Or
-      the lack thereof if you want to look at it that way.
-    </p>
-
-    <p>As a beginner to coding there have been many hurdles to pass and much
-      frstration to overcome. I have found that one of the biggest sources of
-      my frustration in learning something completely new is dealing with
-      mistakes and errors. As a kid I was taught that mistakes are not a
-      problem, that they should even be looked at as good because they are a
-      learning tool. How are you going to learn how to do something right, if you
-      don't ever know what it is like to do that thing wrong? Making a mistake is
-      not something to be looked down upon, because it's what you do with, or on
-      account of the mistake, that really the important thing. Great and
-      magnifecent things have come form mistakes throughout history, and will
-      continue to do so.
-    </p>
-
-    <p>The issue is that in order to grow from our mistakes, we have to have some
-      information about those mistakes. What caused them? Where did they happen?
-      What else could have been done? Why is that something else better?
-      Conveniently both Ruby and Jacvascript give us information about our errors
-      in the form of messages when they encounter some error in our script.
-      However what those messges that each language sends is a fundamental
-      difference between the two languages.
-    </p>
-
-    <p>In some sense Ruby is the good cop in this situation. Error messages in
-      Ruby tend to give you a ton of information. The file name is given. The
-      line number the error occurs on is given. The type of error is given. There
-      is even an arrow pointing to the point of error included in the message.
-      Once one learns how to read through a Ruby error message, fixing the problem
-      is not all that big of an issue. You can go to the file called for, find
-      the line mentioned, pinpoint where the error is happening, find the type
-      of error that is occurring and go look up how to fix it. Maybe the task of
-      actually making the code run will prove to be difficult, but Ruby will tell
-      you everything you need to know to go about fixing it outside of telling you
-      how to fix it.
-     </p>
-
-     <p>Of course if there's a good cop there has to be a bad cop. JavaScript is
-      wearing the bad cop costume in this context. JavaScript tells you that there
-      is an error and pretty much leaves it at that. JS gives you information
-      about the error, but it's not as informative. Sure the line and file
-      location are there, but outside of a one line message, there's not much
-      more to it than that. JS tells you that it can't recognize something, or it
-      can't take some action on undefined, or that some value is not defined. The
-      issue is that all three of these messages can come about because of a
-      misplaced comma or semi-colon that occurred somewhere else than the line
-      being mentioned in the error message. JS error messages don't throw that
-      clear and concise message as to what happened, where it happened and why
-      it is happening.
-    </p>
-
-    <p>This is not to say that one of the languages is better than the other, or
-      that someone should choose to use one language over the other because of
-      the difference of how they treat errors. The point is that if you are one
-      of those beginners, such as myself who are really and truely breaking into
-      the world of coding for the first time, you need to be aware of the fact
-      that if although JS doesn't give you the information that Ruby does about
-      your error there's no reason to pull your hair trying to figure it out.
-      What I have learned over the past week is that JS makes you work for it.
-      You have to go back up and play around with the code. Maybe you forgot a
-      comma and that's why your function is reading as not defined. Maybe you
-      forgot one of the ever present semi-colons somewhere and two lines are
-      being read as wone. JS makes you go back and sift through your stucture
-      and sytax to see what is really going on, almost forcing you through a
-      learning experience that is a little more active than reading. As long as you
-      can employ the patience to work back through the file and check all your
-      points of syntax, any error can be overcome.
-    </p>
+  <body>
 
 
-  </section>
+    <header>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="../about_me.html">About Me</a>
+        <a href="blog-index.html">Blog</a>
+        <a href="../projects/index.html">Projects</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </header>
+
+
+    <section id="top">
+      <p id="one">Ruby vs. JavaScript: An Error Primer</p>
+      <p id="two">DBC Week 7: Challenge #9</p>
+      <p id="three">June 12, 2015</p>
+    </section>
+
+    <section id="meat">
+
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;Sitting here trying to think about a fundamental
+        difference between Ruby and JavaScript the first thing that comes to mind is
+        the error message. Or the lack thereof if you want to look at it that way.
+      </p>
+
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;As a beginner to coding there have been many hurdles
+        to pass and much frstration to overcome. I have found that one of the biggest
+        sources of my frustration in learning something completely new is dealing with
+        mistakes and errors. As a kid I was taught that mistakes are not a
+        problem, that they should even be looked at as good because they are a
+        learning tool. How are you going to learn how to do something right, if you
+        don't ever know what it is like to do that thing wrong? Making a mistake is
+        not something to be looked down upon, because it's what you do with, or on
+        account of the mistake, that really the important thing. Great and
+        magnifecent things have come form mistakes throughout history, and will
+        continue to do so.
+      </p>
+
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;The issue is that in order to grow from our mistakes,
+        we have to have some information about those mistakes. What caused them? Where
+        did they happen? What else could have been done? Why is that something else
+        better? Conveniently both Ruby and Jacvascript give us information about our
+        errors in the form of messages when they encounter some error in our script.
+        However what those messges that each language sends is a fundamental
+        difference between the two languages.
+      </p>
+
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;In some sense Ruby is the good cop in this situation.
+        Error messages in Ruby tend to give you a ton of information. The file name is
+        given. The line number the error occurs on is given. The type of error is
+        given. There is even an arrow pointing to the point of error included in the
+        message. Once one learns how to read through a Ruby error message, fixing the
+        problem is not all that big of an issue. You can go to the file called for,
+        find the line mentioned, pinpoint where the error is happening, find the type
+        of error that is occurring and go look up how to fix it. Maybe the task of
+        actually making the code run will prove to be difficult, but Ruby will tell
+        you everything you need to know to go about fixing it outside of telling you
+        how to fix it.
+       </p>
+
+       <p>&nbsp;&nbsp;&nbsp;&nbsp;Of course if there's a good cop there has to be a
+        bad cop. JavaScript is wearing the bad cop costume in this context. JavaScript
+        tells you that there is an error and pretty much leaves it at that. JS gives
+        you information about the error, but it's not as informative. Sure the line
+        and file location are there, but outside of a one line message, there's not
+        much more to it than that. JS tells you that it can't recognize something, or
+        it can't take some action on undefined, or that some value is not defined. The
+        issue is that all three of these messages can come about because of a
+        misplaced comma or semi-colon that occurred somewhere else than the line
+        being mentioned in the error message. JS error messages don't throw that
+        clear and concise message as to what happened, where it happened and why
+        it is happening.
+      </p>
+
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;This is not to say that one of the languages is
+        better than the other, or that someone should choose to use one language over
+        the other because of the difference of how they treat errors. The point is
+        that if you are one of those beginners, such as myself who are really and
+        truely breaking into the world of coding for the first time, you need to be
+        aware of the fact that if although JS doesn't give you the information that
+        Ruby does about your error there's no reason to pull your hair trying to
+        figure it out. What I have learned over the past week is that JS makes you
+        work for it. You have to go back up and play around with the code. Maybe you
+        forgot a comma and that's why your function is reading as not defined. Maybe
+        you forgot one of the ever present semi-colons somewhere and two lines are
+        being read as wone. JS makes you go back and sift through your stucture
+        and sytax to see what is really going on, almost forcing you through a
+        learning experience that is a little more active than reading. As long as you
+        can employ the patience to work back through the file and check all your
+        points of syntax, any error can be overcome.
+      </p>
 </main>
-
+</html>
